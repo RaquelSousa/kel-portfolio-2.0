@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { searchSchema, type SearchData } from "@/lib/validations";
-import { Button } from "@kel/ui-components";
-import { Input } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
+import { Input } from "kel-ui-components";
 import {
   Form,
   FormControl,

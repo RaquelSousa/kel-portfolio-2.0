@@ -8,7 +8,7 @@ export default {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@kel/ui-components/dist/**/*.js",
+    "./node_modules/kel-ui-components/dist/**/*.js",
   ],
   prefix: "",
   theme: {

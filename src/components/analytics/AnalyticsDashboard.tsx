@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@kel/ui-components";
-import { Badge } from "@kel/ui-components";
-import { Button } from "@kel/ui-components";
-import { ScrollArea } from "@kel/ui-components";
+import { Card, CardContent, CardHeader, CardTitle } from "kel-ui-components";
+import { Badge } from "kel-ui-components";
+import { Button } from "kel-ui-components";
+import { ScrollArea } from "kel-ui-components";
 import { analytics } from "@/lib/analytics";
 import type {
   AnalyticsEvent,

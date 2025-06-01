@@ -8,11 +8,11 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@kel/ui-components";
-import { Button } from "@kel/ui-components";
-import { Input } from "@kel/ui-components";
-import { Textarea } from "@kel/ui-components";
-import { Badge } from "@kel/ui-components";
+} from "kel-ui-components";
+import { Button } from "kel-ui-components";
+import { Input } from "kel-ui-components";
+import { Textarea } from "kel-ui-components";
+import { Badge } from "kel-ui-components";
 import {
   Form,
   FormControl,

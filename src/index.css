@@ -1,4 +1,4 @@
-@import "@kel/ui-components/styles.css";
+@import "kel-ui-components/styles.css";
 
 @tailwind base;
 @tailwind components;

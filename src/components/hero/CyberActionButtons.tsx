@@ -1,5 +1,5 @@
 import { Download, Github, Linkedin, Mail, Terminal } from "lucide-react";
-import { Button } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
 import { ChevronDown } from "lucide-react";
 import { useClickTracking, useFeatureTracking } from "@/hooks/useAnalytics";
 import TrackingWrapper from "@/components/analytics/TrackingWrapper";

@@ -5,9 +5,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@kel/ui-components";
-import { Badge } from "@kel/ui-components";
-import { Button } from "@kel/ui-components";
+} from "kel-ui-components";
+import { Badge } from "kel-ui-components";
+import { Button } from "kel-ui-components";
 import { Github, ExternalLink, Globe, Beaker, Smartphone } from "lucide-react";
 import { OtherProject } from "@/types";
 import { ComingSoonOverlay } from "./ComingSoonOverlay";

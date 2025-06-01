@@ -1,7 +1,7 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 import { AlertTriangle, RefreshCw } from "lucide-react";
-import { Button } from "@kel/ui-components";
-import { Alert, AlertDescription } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
+import { Alert, AlertDescription } from "kel-ui-components";
 import ErrorBoundary from "./ErrorBoundary";
 
 interface ComponentErrorBoundaryProps {

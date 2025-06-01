@@ -1,7 +1,7 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 import { AlertTriangle, RefreshCw, Home } from "lucide-react";
-import { Button } from "@kel/ui-components";
-import { Alert, AlertDescription, AlertTitle } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
+import { Alert, AlertDescription, AlertTitle } from "kel-ui-components";
 import errorReporting from "@/lib/errorReporting";
 
 interface Props {

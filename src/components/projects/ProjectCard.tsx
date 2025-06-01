@@ -6,9 +6,9 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@kel/ui-components";
-import { Badge } from "@kel/ui-components";
-import { Button } from "@kel/ui-components";
+} from "kel-ui-components";
+import { Badge } from "kel-ui-components";
+import { Button } from "kel-ui-components";
 import { Github, ExternalLink } from "lucide-react";
 import { useHoverAnimation } from "@/hooks/useAnimations";
 import { Project } from "@/types";

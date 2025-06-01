@@ -1,5 +1,5 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
-import { Button } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
 import { NewsletterForm } from "@/components/forms";
 
 export function Footer() {

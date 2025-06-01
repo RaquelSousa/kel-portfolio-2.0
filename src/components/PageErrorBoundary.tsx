@@ -1,13 +1,13 @@
 import React, { Component, ErrorInfo, ReactNode } from "react";
 import { AlertTriangle, Home, RefreshCw } from "lucide-react";
-import { Button } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@kel/ui-components";
+} from "kel-ui-components";
 import ErrorBoundary from "./ErrorBoundary";
 
 interface PageErrorBoundaryProps {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@kel/ui-components";
+import { Button } from "kel-ui-components";
 
 const navItems = [
   { href: "#home", label: "Home", symbol: "◉", code: "HOME", type: "hash" },

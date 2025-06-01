@@ -1,6 +1,6 @@
-import { RadixToaster } from "@kel/ui-components";
-import { SonnerToaster } from "@kel/ui-components";
-import { TooltipProvider } from "@kel/ui-components";
+import { RadixToaster } from "kel-ui-components";
+import { SonnerToaster } from "kel-ui-components";
+import { TooltipProvider } from "kel-ui-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
@@ -10,7 +10,7 @@ import PageErrorBoundary from "./components/PageErrorBoundary";
 import { RouteLoader } from "./utils/lazyLoad";
 import { useAnalytics } from "./hooks/useAnalytics";
 import { trackError } from "./lib/analytics";
-import { ScrollProgress } from "@kel/ui-components";
+import { ScrollProgress } from "kel-ui-components";
 import { pageVariants } from "@/lib/animations";
 
 const Index = lazy(() => import("./pages/Index"));

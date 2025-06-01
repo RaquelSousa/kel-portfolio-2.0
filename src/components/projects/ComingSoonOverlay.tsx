@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Clock, Code2 } from "lucide-react";
-import { Badge } from "@kel/ui-components";
+import { Badge } from "kel-ui-components";
 
 interface ComingSoonOverlayProps {
   progress: number;

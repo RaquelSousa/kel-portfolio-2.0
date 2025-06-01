@@ -1,5 +1,5 @@
 import { MapPin, Zap, Code2 } from "lucide-react";
-import { Badge } from "@kel/ui-components";
+import { Badge } from "kel-ui-components";
 import { MatrixBackground } from "@/components/hero/MatrixBackground";
 import { TechStackDisplay } from "@/components/hero/TechStackDisplay";
 import { CyberActionButtons } from "@/components/hero/CyberActionButtons";

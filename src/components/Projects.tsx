@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@kel/ui-components";
-import { Button } from "@kel/ui-components";
+import { Card, CardContent } from "kel-ui-components";
+import { Button } from "kel-ui-components";
 import { SectionHeader } from "@/components/ui/section-header";
 import { ProjectCard } from "@/components/projects/ProjectCard";
 import { OtherProjectCard } from "@/components/projects/OtherProjectCard";

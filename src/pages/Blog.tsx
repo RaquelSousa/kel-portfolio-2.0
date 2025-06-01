@@ -3,7 +3,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
-import { Badge } from "@kel/ui-components";
+import { Badge } from "kel-ui-components";
 import { BookOpen, Clock, Terminal, ArrowLeft } from "lucide-react";
 import {
   pageVariants,

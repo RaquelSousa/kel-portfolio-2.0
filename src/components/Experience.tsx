@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@kel/ui-components";
-import { Badge } from "@kel/ui-components";
+import { Card, CardContent } from "kel-ui-components";
+import { Badge } from "kel-ui-components";
 
 const experiences = [
   {

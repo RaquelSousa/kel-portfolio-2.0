@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { Skeleton } from "@kel/ui-components";
+import { Skeleton } from "kel-ui-components";
 
 export function ComponentSkeleton() {
   return (

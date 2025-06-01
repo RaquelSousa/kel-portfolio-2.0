@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@kel/ui-components";
-import { Badge } from "@kel/ui-components";
+import { Card, CardContent } from "kel-ui-components";
+import { Badge } from "kel-ui-components";
 import { Zap, Target, Cpu, Users, Code, Database } from "lucide-react";
 
 const achievements = [

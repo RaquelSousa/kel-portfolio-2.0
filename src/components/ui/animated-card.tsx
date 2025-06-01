@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";
-import { Card } from "@kel/ui-components";
+import { Card } from "kel-ui-components";
 import { BaseProps, WithAnimation } from "@/types";
 import { motion, MotionProps } from "framer-motion";
 
