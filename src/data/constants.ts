@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
     solution:
       "Comprehensive component library with TypeScript, and Tailwind CSS",
     impact: "40% reduction in frontend development time",
-    features: ["Accessibility compliance, NPM package"],
+    features: ["Accessibility compliance", "NPM package"],
     technologies: [
       "React 19",
       "Vite",
