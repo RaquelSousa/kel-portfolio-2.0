@@ -7,8 +7,6 @@ It's optimized for Accessibility, SEO, is fully responsive, and even has built i
 
 ### Prerequisites
 
-````
-
 1. **Clone**
 
 ```bash
