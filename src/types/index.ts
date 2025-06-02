@@ -16,7 +16,7 @@ export interface Project {
   features: string[];
   technologies: string[];
   github: string;
-  demo: string;
+  demo?: string;
   image?: string;
   status?: "completed" | "in-progress" | "planning";
   progress?: number;

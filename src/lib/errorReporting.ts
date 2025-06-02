@@ -149,24 +149,7 @@ class ErrorReportingService {
   }
 
   private async sendReports(reports: ErrorReport[]) {
-    // TODO: Replace with your actual error reporting service
-    // Examples:
-
-    // Sentry
-    // reports.forEach(report => {
-    //   Sentry.captureException(report.error, {
-    //     contexts: { custom: report.context },
-    //     level: this.mapSeverityToSentryLevel(report.severity),
-    //   });
-    // });
-
-    // Custom API endpoint
-    // const response = await fetch('/api/errors', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(reports),
-    // });
-
+    // TODO: Replace with your an actual error reporting service
     // For now, just log in production
     console.group("Error Reports Sent");
     reports.forEach((report) => {

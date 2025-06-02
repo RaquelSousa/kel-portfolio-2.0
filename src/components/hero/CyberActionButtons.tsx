@@ -1,4 +1,11 @@
-import { Download, Github, Linkedin, Mail, Terminal } from "lucide-react";
+import {
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  Terminal,
+  FileText,
+} from "lucide-react";
 import { Button } from "kel-ui-components";
 import { ChevronDown } from "lucide-react";
 import { useClickTracking, useFeatureTracking } from "@/hooks/useAnalytics";
@@ -18,6 +25,7 @@ export function CyberActionButtons({
     "hero_section"
   );
   const trackContactClick = useClickTracking("contact_button", "hero_section");
+  const trackCVClick = useClickTracking("cv_button", "hero_section");
   const trackFeature = useFeatureTracking("hero_actions");
 
   const handleViewProjectsClick = () => {
@@ -40,6 +48,20 @@ export function CyberActionButtons({
     onContact();
   };
 
+  const handleCVClick = () => {
+    trackCVClick();
+    trackFeature("button_clicked", {
+      button: "view_cv",
+      section: "hero",
+      timestamp: Date.now(),
+    });
+    window.open(
+      "https://docs.google.com/document/d/1t82n3E9je6DkGVWS-vznq8o7x5gZwT3-CvJkcL0GRt8/edit?tab=t.0",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <TrackingWrapper
       componentName="HeroActionButtons"
@@ -57,6 +79,18 @@ export function CyberActionButtons({
             <ChevronDown className="h-4 w-4 group-hover:translate-y-1 transition-transform" />
           </span>
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </Button>
+
+        <Button
+          onClick={handleCVClick}
+          className="cyber-btn group bg-green-600 hover:bg-green-700 text-black font-bold py-3 px-8 rounded-none border-2 border-green-400 relative overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-green-400/25"
+          size="lg"
+        >
+          <span className="relative z-10 flex items-center gap-2">
+            <FileText className="h-4 w-4" />
+            VIEW CV
+          </span>
+          <div className="absolute inset-0 bg-gradient-to-r from-green-400 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </Button>
 
         <Button

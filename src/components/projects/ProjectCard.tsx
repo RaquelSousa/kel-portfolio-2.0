@@ -104,7 +104,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
         <CardContent>
           <motion.div
-            className="space-y-3"
+            className="space-y-4"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -134,11 +134,12 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </motion.div>
 
           <motion.div
+            className="mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 + 0.3 }}
           >
-            <h4 className="text-sm font-semibold mb-2 uppercase tracking-wide">
+            <h4 className="text-sm font-semibold mb-3 uppercase tracking-wide">
               Key Features
             </h4>
             <motion.div
@@ -170,6 +171,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </motion.div>
 
           <motion.div
+            className="mt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 + 0.4 }}
@@ -211,7 +213,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </motion.div>
 
           <motion.div
-            className="flex gap-3 pt-4 border-t border-border/50"
+            className="flex gap-3 pt-6 mt-6 border-t border-border/50"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 + 0.5 }}

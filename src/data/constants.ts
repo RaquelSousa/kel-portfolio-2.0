@@ -41,57 +41,89 @@ export const TECH_STACK: TechStackItem[] = [
 
 export const PROJECTS: Project[] = [
   {
-    title: "Component Library",
+    title: "Portfolio 2.0",
     description:
-      "Comprehensive component library designed to reduce development time across multiple SaaS applications with TypeScript, Storybook, and Tailwind CSS.",
-    problem: "Reduce development time across multiple SaaS applications",
+      "My portfolio website, showcasing my experience and skills (this website)",
+    problem:
+      "The 1st version of my portfolio doesn't show my skills and projects in a comprehensive way.",
     solution:
-      "Comprehensive component library with TypeScript, Storybook, and Tailwind CSS",
-    impact: "40% reduction in frontend development time",
+      "Remake the portfolio from scratch, with a new design and a new structure.",
+    impact:
+      "This version showcases my skills and projects in a comprehensive way.",
     features: [
-      "Theme system",
-      "Responsive design",
       "Accessibility compliance",
       "Automated testing",
-    ],
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Storybook",
-      "Jest",
-      "Accessibility",
-    ],
-    github: "https://github.com/RaquelSousa",
-    demo: "https://storybook.example.com",
-    status: "in-progress",
-    progress: 40,
-  },
-  {
-    title: "React 19 Migration",
-    description:
-      "POC migration showcasing React 19's concurrent features and performance optimization capabilities in a production-ready environment.",
-    problem: "Demonstrate concurrent features and performance optimization",
-    solution: "POC migration showcasing new React 19 features",
-    impact: "Performance improvements and modern React patterns",
-    features: [
-      "Suspense boundaries",
-      "Concurrent rendering",
-      "Automatic batching",
-      "Server components",
+      "Performance optimization",
+      "SEO",
+      "Responsive Design",
     ],
     technologies: [
       "React 19",
-      "TypeScript",
       "Vite",
-      "Concurrent Features",
-      "Performance",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Component Library",
+      "shadcn/ui",
+      "React Hook Form",
+      "Zod",
+      "Tanstack Query",
+      "React Router",
+      "Git",
+      "Vitest",
+      "Cypress",
     ],
-    github: "https://github.com/RaquelSousa",
-    demo: "https://react19-demo.example.com",
-    status: "in-progress",
-    progress: 30,
+    demo: "https://raquelsousa.com/",
+    github: "https://github.com/RaquelSousa/kel-portfolio-2.0",
+    status: "completed",
   },
+  {
+    title: "Component Library",
+    description:
+      "Component library designed to connect to my portfolio website. The goal will be to build a wesbite to showcase it.",
+    problem: "Reduce development time across multiple applications",
+    solution:
+      "Comprehensive component library with TypeScript, and Tailwind CSS",
+    impact: "40% reduction in frontend development time",
+    features: ["Accessibility compliance, NPM package"],
+    technologies: [
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Accessibility",
+      "Git",
+      "shadcn/ui",
+    ],
+    github: "https://github.com/RaquelSousa/kel-ui-components",
+    status: "completed",
+  },
+  // {
+  //   title: "React 19 Migration",
+  //   description:
+  //     "POC migration showcasing React 19's concurrent features and performance optimization capabilities in a production-ready environment.",
+  //   problem: "Demonstrate concurrent features and performance optimization",
+  //   solution: "POC migration showcasing new React 19 features",
+  //   impact: "Performance improvements and modern React patterns",
+  //   features: [
+  //     "Suspense boundaries",
+  //     "Concurrent rendering",
+  //     "Automatic batching",
+  //     "Server components",
+  //   ],
+  //   technologies: [
+  //     "React 19",
+  //     "TypeScript",
+  //     "Vite",
+  //     "Concurrent Features",
+  //     "Performance",
+  //   ],
+  //   github: "https://github.com/RaquelSousa",
+  //   demo: "https://react19-demo.example.com",
+  //   status: "in-progress",
+  //   progress: 30,
+  // },
   {
     title: "Form Management",
     description:
@@ -159,16 +191,7 @@ export const OTHER_PROJECTS: OtherProject[] = [
     status: "in-progress",
     progress: 30,
   },
-  {
-    title: "Weather App",
-    description:
-      "Simple weather application with location-based forecasts to learn Angular",
-    technologies: ["Angular", "OpenWeather API", "SCSS", "Bootstrap"],
-    demo: "https://kel-weather-app.vercel.app/",
-    github: "https://github.com/RaquelSousa/weather-app",
-    type: "app",
-    status: "completed",
-  },
+
   // {
   //   title: "Landing Page Collection",
   //   description:
@@ -192,7 +215,7 @@ export const OTHER_PROJECTS: OtherProject[] = [
   //   progress: 50,
   // },
   {
-    title: "Portfolio Website v1",
+    title: "Portfolio 1.0",
     description:
       "Previous portfolio iteration showcasing earlier projects and experiments",
     technologies: ["React", "SCSS", "TypeScript", "Tailwind CSS, Material UI"],
@@ -202,7 +225,7 @@ export const OTHER_PROJECTS: OtherProject[] = [
     status: "completed",
   },
   {
-    title: "World of Warcraft Guild Website v1",
+    title: "World of Warcraft Guild Website 1.0",
     description:
       "Website created for a World of Warcraft guild. Created in the early days of my coding journey.",
     technologies: ["React", "SCSS", "TypeScript", "Material UI"],
@@ -212,7 +235,7 @@ export const OTHER_PROJECTS: OtherProject[] = [
     status: "completed",
   },
   {
-    title: "World of Warcraft Guild Website v2",
+    title: "World of Warcraft Guild Website 2.0",
     description:
       "Website created for a World of Warcraft guild, after years of Next.js and TypeScript experience.",
     technologies: [
@@ -242,6 +265,16 @@ export const OTHER_PROJECTS: OtherProject[] = [
     demo: "https://www.kandkaquatics.com/",
     github: "https://github.com/RaquelSousa/kkaquatics",
     type: "website",
+    status: "completed",
+  },
+  {
+    title: "Weather App",
+    description:
+      "Simple weather application with location-based forecasts to learn Angular",
+    technologies: ["Angular", "OpenWeather API", "SCSS", "Bootstrap"],
+    demo: "https://kel-weather-app.vercel.app/",
+    github: "https://github.com/RaquelSousa/weather-app",
+    type: "app",
     status: "completed",
   },
 ];
