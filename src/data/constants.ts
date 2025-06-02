@@ -73,7 +73,7 @@ export const PROJECTS: Project[] = [
       "Vitest",
       "Cypress",
     ],
-    demo: "https://raquelsousa.com/",
+    demo: "https://raquel-portfolio-20.vercel.app/",
     github: "https://github.com/RaquelSousa/kel-portfolio-2.0",
     status: "completed",
   },
