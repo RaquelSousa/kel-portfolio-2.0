@@ -7,10 +7,13 @@ It's optimized for Accessibility, SEO, is fully responsive, and even has built i
 
 ### Prerequisites
 
-8ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttz A2Q
+````
+
+1. **Clone**
+
+```bash
 git clone <repository-url>
 cd kel-portfolio-2.0
-
 ````
 
 2. **Install dependencies**
