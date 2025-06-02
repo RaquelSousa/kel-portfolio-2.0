@@ -38,8 +38,6 @@ export default defineConfig(({ mode }) => ({
 
           "query-vendor": ["@tanstack/react-query"],
 
-          charts: ["recharts"],
-
           utils: [
             "clsx",
             "class-variance-authority",

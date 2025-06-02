@@ -113,7 +113,6 @@ export function SEO({
   useEffect(() => {
     if (typeof document === "undefined") return;
 
-    // Update page title
     document.title = seoTitle;
 
     const updateMetaTag = (name: string, content: string, property = false) => {
@@ -147,12 +146,10 @@ export function SEO({
       link.setAttribute("href", href);
     };
 
-    // Basic meta tags
     updateMetaTag("description", seoDescription);
     updateMetaTag("keywords", seoKeywords);
     updateMetaTag("author", "Raquel Sousa");
 
-    // Open Graph meta tags
     updateMetaTag("og:type", type, true);
     updateMetaTag("og:title", seoTitle, true);
     updateMetaTag("og:description", seoDescription, true);
@@ -161,14 +158,12 @@ export function SEO({
     updateMetaTag("og:site_name", "Raquel Sousa Portfolio", true);
     updateMetaTag("og:locale", "en_GB", true);
 
-    // Twitter Card meta tags
     updateMetaTag("twitter:card", "summary_large_image");
     updateMetaTag("twitter:title", seoTitle);
     updateMetaTag("twitter:description", seoDescription);
     updateMetaTag("twitter:image", seoImage);
     updateMetaTag("twitter:creator", "@raquelsousa");
 
-    // Robots and crawling directives
     updateMetaTag("robots", "index, follow, max-image-preview:large");
     updateMetaTag(
       "googlebot",
@@ -179,12 +174,10 @@ export function SEO({
       "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
     );
 
-    // Technical meta tags
     updateMetaTag("format-detection", "telephone=no");
     updateMetaTag("theme-color", "#000000");
     updateMetaTag("color-scheme", "dark light");
 
-    // Additional SEO improvements
     updateMetaTag("application-name", "Raquel Sousa Portfolio");
     updateMetaTag("apple-mobile-web-app-title", "Raquel Sousa");
     updateMetaTag("apple-mobile-web-app-capable", "yes");
@@ -192,16 +185,13 @@ export function SEO({
     updateMetaTag("msapplication-TileColor", "#000000");
     updateMetaTag("msapplication-config", "/browserconfig.xml");
 
-    // Geographic targeting
     updateMetaTag("geo.region", "GB-NIR");
     updateMetaTag("geo.placename", "Belfast, Northern Ireland");
     updateMetaTag("geo.position", "54.597285;-5.930120");
     updateMetaTag("ICBM", "54.597285, -5.930120");
 
-    // Canonical URL
     updateLinkTag("canonical", canonicalUrl);
 
-    // Update structured data
     let structuredDataScript = document.querySelector(
       'script[type="application/ld+json"]'
     ) as HTMLScriptElement;
@@ -218,7 +208,6 @@ export function SEO({
       2
     );
 
-    // Performance hint for critical resources
     const preloadFont = document.querySelector(
       'link[href*="fonts.googleapis.com"]'
     );
@@ -227,9 +216,7 @@ export function SEO({
       preloadFont.setAttribute("as", "style");
     }
 
-    return () => {
-      // Cleanup is handled automatically by React 19
-    };
+    return () => {};
   }, [
     seoTitle,
     seoDescription,

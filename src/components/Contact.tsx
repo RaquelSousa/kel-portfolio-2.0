@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactFormSchema, type ContactFormData } from "@/lib/validations";
 import { useFormSubmission } from "@/hooks/useFormSubmission";
+import { sendContactEmail } from "@/lib/email";
 import {
   Card,
   CardContent,
@@ -21,7 +22,15 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Send,
+  Loader2,
+} from "lucide-react";
 
 export function Contact() {
   const form = useForm<ContactFormData>({
@@ -36,16 +45,15 @@ export function Contact() {
 
   const { submit, isSubmitting } = useFormSubmission<ContactFormData>({
     onSubmit: async (data) => {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      console.log("Form data:", data);
+      await sendContactEmail(data);
     },
     onSuccess: () => {
       form.reset();
     },
     successMessage:
-      "Thank you for your interest. I'll get back to you within 24 hours.",
-    errorMessage: "Please try again later or contact me directly via email.",
+      "Thank you for your message! I'll get back to you within 24 hours.",
+    errorMessage:
+      "Sorry, there was an error sending your message. Please try again or contact me directly via email.",
   });
 
   const { handleSubmit } = form;
@@ -69,20 +77,12 @@ export function Contact() {
               <Card className="border-0 shadow-lg h-full">
                 <CardHeader>
                   <CardTitle className="text-2xl">Get In Touch</CardTitle>
+                  <CardDescription>
+                    I'm always open to discussing new opportunities and
+                    interesting projects. Feel free to reach out!
+                  </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-8">
-                  <div>
-                    <Badge className="mb-4">
-                      <span className="w-2 h-2 bg-green-500 rounded-full mr-2" />
-                      Available for new opportunities
-                    </Badge>
-                    <p className="text-muted-foreground leading-relaxed">
-                      I'm currently seeking senior frontend roles where I can
-                      leverage my React/TypeScript expertise to drive technical
-                      excellence and mentor development teams.
-                    </p>
-                  </div>
-
+                <CardContent className="space-y-6">
                   <div className="space-y-4">
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -129,46 +129,45 @@ export function Contact() {
                     </div>
                   </div>
 
-                  <div className="pt-6 border-t border-border/50">
+                  <div className="border-t pt-6">
                     <p className="text-sm text-muted-foreground mb-4">
-                      Connect with me online:
+                      Find me on social media
                     </p>
-                    <div className="flex gap-4">
-                      <Button variant="outline" size="sm" asChild>
-                        <a
-                          href="https://github.com/RaquelSousa"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="View Raquel Sousa's GitHub profile (opens in new tab)"
-                        >
-                          <Github className="mr-2 h-4 w-4" />
-                          GitHub
-                        </a>
-                      </Button>
-                      <Button variant="outline" size="sm" asChild>
-                        <a
-                          href="https://www.linkedin.com/in/raquel-sousa-frontend-developer/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="View Raquel Sousa's LinkedIn profile (opens in new tab)"
-                        >
-                          <Linkedin className="mr-2 h-4 w-4" />
-                          LinkedIn
-                        </a>
-                      </Button>
+                    <div className="flex gap-3">
+                      <a
+                        href="https://github.com/kellykel"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                        aria-label="Visit GitHub profile"
+                      >
+                        <Github className="h-4 w-4 text-primary" />
+                      </a>
+                      <a
+                        href="https://linkedin.com/in/raquel-sousa-w"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center hover:bg-primary/20 transition-colors"
+                        aria-label="Visit LinkedIn profile"
+                      >
+                        <Linkedin className="h-4 w-4 text-primary" />
+                      </a>
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-r from-primary/5 to-purple-500/5 p-6 rounded-lg">
-                    <h4 className="font-semibold mb-2">
-                      Let's build something exceptional together
-                    </h4>
+                  <div className="border border-dashed border-muted rounded-lg p-4">
                     <p className="text-sm text-muted-foreground">
-                      Whether you're looking for a senior developer to lead your
-                      frontend initiatives or need an experienced mentor for
-                      your development team, I'm here to help drive your
-                      technical vision forward.
+                      <strong>Response Time:</strong> I typically respond to
+                      emails within 24 hours during business days. For urgent
+                      matters, please call directly.
                     </p>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Badge variant="secondary" className="mr-2">
+                      Open to Work
+                    </Badge>
+                    <Badge variant="outline">Remote Friendly</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -265,6 +264,7 @@ export function Contact() {
                             <span className="sr-only" id="form-loading-message">
                               Sending your message, please wait
                             </span>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                             Sending...
                           </>
                         ) : (
