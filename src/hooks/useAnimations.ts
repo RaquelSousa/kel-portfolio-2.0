@@ -12,7 +12,7 @@ export const useScrollAnimation = (threshold = 0.1) => {
   const isInView = useInView(ref, {
     amount: threshold,
     once: true,
-    margin: "-100px 0px",
+    margin: "0px 0px",
   });
   const controls = useAnimation();
 
