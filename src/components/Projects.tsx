@@ -16,7 +16,7 @@ import {
 } from "@/lib/animations";
 
 export function Projects() {
-  const { ref, controls } = useScrollAnimation(0.2);
+  const { ref, controls } = useScrollAnimation();
   const { scrollToSection } = useSmoothScroll();
 
   return (
