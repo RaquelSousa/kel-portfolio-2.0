@@ -93,6 +93,7 @@ export function Footer() {
             </div>
           </div>
 
+          {/* TODO: Newsletter signup - commented out for future implementation
           <div className="border-t border-border/50 mt-12 pt-8">
             <div className="max-w-md mx-auto text-center mb-8">
               <h4 className="font-semibold text-lg mb-2">Stay Updated</h4>
@@ -107,6 +108,7 @@ export function Footer() {
               />
             </div>
           </div>
+          */}
 
           <div className="border-t border-border/50 pt-8">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
