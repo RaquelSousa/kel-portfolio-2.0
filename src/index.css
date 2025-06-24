@@ -168,6 +168,13 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* 80px - mobile navbar height */
+  }
+
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 6rem; /* 96px - desktop navbar height */
+    }
   }
 
   h1,

@@ -32,7 +32,7 @@ export function Hero() {
     <motion.section
       ref={ref}
       id="home"
-      className="min-h-screen relative overflow-hidden flex items-center"
+      className="min-h-screen relative overflow-hidden flex items-center pt-20 md:pt-24"
       aria-label="Introduction and hero section"
       variants={pageVariants}
       initial="hidden"
@@ -112,7 +112,7 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                &gt; SENIOR_FRONTEND_DEVELOPER.exe
+                &gt; CO-CEO_&_SENIOR_FRONTEND_DEVELOPER.exe
               </motion.h2>
               <motion.div
                 className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 w-2 sm:w-3 h-4 sm:h-6 bg-cyan-400"
@@ -194,7 +194,7 @@ export function Hero() {
                   [STATUS]
                 </motion.span>{" "}
                 <span className="break-words">
-                  BUILDING THE FUTURE, ONE COMPONENT AT A TIME
+                  BUILDING THE FUTURE, ONE COMPONENT AT A TIME • LEADING DIGITAL TRANSFORMATION
                 </span>
               </motion.p>
             </motion.div>
