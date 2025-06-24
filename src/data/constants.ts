@@ -32,6 +32,12 @@ export const TECH_STACK: TechStackItem[] = [
     category: "cloud",
   },
   {
+    name: "Vercel",
+    color: "from-black to-gray-800",
+    icon: "▲",
+    category: "cloud",
+  },
+  {
     name: "PostgreSQL",
     color: "from-green-500 to-emerald-600",
     icon: "🍃",
@@ -40,6 +46,32 @@ export const TECH_STACK: TechStackItem[] = [
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    title: "Software Development Company Website",
+    description: "Website for Hiraeth Infinite, a technology consultancy I co-founded specializing in modern web applications and digital transformation",
+    problem: "The company didn't have a website",
+    solution: "A website to showcase the company's services and projects",
+    impact: "Companies now able to showcase their services and projects",
+    features: [
+      "Responsive Design",
+      "SEO",
+      "Accessibility",
+      "Performance Optimization",
+    ],
+    technologies: [
+      "React 19",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Accessibility",
+      "Git",
+      "shadcn/ui",
+    ],
+    github: "https://github.com/RaquelSousa",
+    demo: "https://hinfinite.io/",
+    status: "completed",
+  },
   {
     title: "Portfolio 2.0",
     description:
@@ -151,32 +183,6 @@ export const PROJECTS: Project[] = [
   //   progress: 60,
   // },
   {
-    title: "Software Development Company Website",
-    description: "Website for a software development company.",
-    problem: "The company didn't have a website",
-    solution: "A website to showcase the company's services and projects",
-    impact: "Companies now able to showcase their services and projects",
-    features: [
-      "Responsive Design",
-      "SEO",
-      "Accessibility",
-      "Performance Optimization",
-    ],
-    technologies: [
-      "React 19",
-      "Vite",
-      "TypeScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Accessibility",
-      "Git",
-      "shadcn/ui",
-    ],
-    github: "https://github.com/RaquelSousa",
-    demo: "https://hinfinite.io/",
-    status: "completed",
-  },
-  {
     title: "Holiday Booking Platform",
     description: "Platform for a holiday booking company.",
     problem: "Lacking holiday platforms with specific features",
@@ -201,11 +207,27 @@ export const PROJECTS: Project[] = [
     github: "https://github.com/RaquelSousa",
     demo: "https://portal.example.com",
     status: "in-progress",
-    progress: 80,
+    progress: 85,
   },
 ];
 
 export const OTHER_PROJECTS: OtherProject[] = [
+  {
+    title: "K&K Aquatics",
+    description:
+      "Website for an aquascape, aquarium and pond services company.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "RestAPI",
+    ],
+    demo: "https://www.kandkaquatics.com/",
+    github: "https://github.com/RaquelSousa/kkaquatics",
+    type: "website",
+    status: "completed",
+  },
   {
     title: "Task Management Dashboard",
     description:
@@ -276,22 +298,6 @@ export const OTHER_PROJECTS: OtherProject[] = [
     type: "website",
     status: "in-progress",
     progress: 95,
-  },
-  {
-    title: "K&K Aquatics",
-    description:
-      "Website for an aquascape, aquarium and pond services company.",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "RestAPI",
-    ],
-    demo: "https://www.kandkaquatics.com/",
-    github: "https://github.com/RaquelSousa/kkaquatics",
-    type: "website",
-    status: "completed",
   },
   {
     title: "Weather App",

@@ -1,8 +1,15 @@
 import { Card, CardContent } from "kel-ui-components";
 import { Badge } from "kel-ui-components";
-import { Zap, Target, Cpu, Users, Code, Database } from "lucide-react";
+import { Zap, Target, Cpu, Users, Code, Database, Building2 } from "lucide-react";
 
 const achievements = [
+  {
+    icon: Building2,
+    title: "CO-FOUNDED HIRAETH INFINITE",
+    description:
+      "Technology consultancy delivering scalable web applications and digital transformation solutions for enterprise clients",
+    metric: "3+ client projects",
+  },
   {
     icon: Target,
     title: "DEPLOYED 3 PRODUCTION SAAS SYSTEMS",
@@ -35,7 +42,7 @@ const achievements = [
 
 const dataPoints = [
   { label: "YEARS_ACTIVE", value: "6+", color: "text-cyan-400" },
-  { label: "PROJECTS_DEPLOYED", value: "3", color: "text-purple-400" },
+  { label: "CLIENT_PROJECTS_DELIVERED", value: "3+", color: "text-purple-400" },
   { label: "PERFORMANCE_GAIN", value: "40%", color: "text-green-400" },
   { label: "TEAM_MEMBERS_MENTORED", value: "3", color: "text-orange-400" },
 ];
@@ -89,8 +96,7 @@ export function About() {
                       </div>
                       <div>
                         <span className="text-purple-400">[DEPLOY] </span>
-                        TODAY: ARCHITECTING COMPLEX SAAS PLATFORMS FOR
-                        ENTERPRISE USERS
+                        TODAY: CO-FOUNDED HIRAETH INFINITE TO DELIVER ENTERPRISE SOLUTIONS
                       </div>
                       <div>
                         <span className="text-green-400">[UNIQUE] </span>

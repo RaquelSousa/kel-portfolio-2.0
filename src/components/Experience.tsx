@@ -3,6 +3,32 @@ import { Badge } from "kel-ui-components";
 
 const experiences = [
   {
+    title: "Co-CEO",
+    company: "Hiraeth Infinite",
+    period: "October 2024 - Present",
+    location: "Remote",
+    type: "Current Role",
+    description:
+      "Co-founded technology consultancy specializing in modern web applications and digital transformation solutions",
+    achievements: [
+      "Lead technical architecture and development for 3+ client projects using React, TypeScript, Next.js, and cloud technologies",
+      "Manage full project lifecycle from client requirements gathering to deployment",
+      "Architect scalable solutions leveraging microservices, serverless functions, and modern CI/CD pipelines",
+      "Drive business development, securing contracts through technical demonstrations",
+      "Implement agile methodologies for distributed team collaboration",
+    ],
+    technologies: [
+      "React 19",
+      "TypeScript",
+      "Next.js 14",
+      "Tailwind CSS",
+      "Azure",
+      "Vercel",
+      "Node.js",
+      "PostgreSQL",
+    ],
+  },
+  {
     title: "Frontend Developer",
     company: "Workstream",
     period: "July 2024 - Present",
