@@ -1,14 +1,11 @@
-/*
- * kel-ui-components ships a full, *unlayered* Tailwind v3 build. Unlayered CSS
- * always beats Tailwind v4's layered utilities, so the lib's `.hidden` was
- * silently winning over our `sm:block` / `md:block` responsive variants. Pull
- * the lib into a low-priority cascade layer so our utilities win again.
- * (Layers only break same-specificity ties, so the lib's component styling —
- * class-vs-element — is unaffected.)
- */
-@layer kel-ui;
+/* kel-ui-components self-layers its CSS in @layer kel-ui-components. Declare it
+   first so that layer ranks BELOW Tailwind's utilities — cascade layer order is
+   fixed by first declaration, and importing the lib after Tailwind would
+   otherwise rank its layer highest, letting its base utilities (.hidden, etc.)
+   override our responsive variants. */
+@layer kel-ui-components;
 @import "tailwindcss";
-@import "kel-ui-components/styles.css" layer(kel-ui);
+@import "kel-ui-components/styles.css";
 
 @plugin "tailwindcss-animate";
 @source ".";
