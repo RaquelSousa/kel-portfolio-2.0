@@ -3,6 +3,33 @@ import { Badge } from "kel-ui-components";
 
 const experiences = [
   {
+    title: "Lead Full-Stack AI Engineer",
+    company: "Law by Lawri",
+    period: "August 2025 - Present",
+    location: "Remote",
+    type: "Current Role",
+    description:
+      "Designed and built the entire AI-powered legal-tech platform from the ground up, serving as the sole developer across the full stack.",
+    achievements: [
+      "Architected a multi-user collaboration system with real-time capabilities",
+      "Implemented RAG (Retrieval-Augmented Generation) pipelines against legal document repositories",
+      "Built multi-model orchestration layer intelligently routing tasks to different LLMs",
+      "Developed AI agents for automated case creation, legal report generation, and intelligent document processing",
+      "Created AI-powered file verification system to validate uploaded legal documents",
+      "Established full DevOps infrastructure across Azure and GCP, including CI/CD pipelines",
+    ],
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Python",
+      "RAG",
+      "AI Agents",
+      "Azure",
+      "GCP",
+    ],
+  },
+  {
     title: "Co-CEO",
     company: "Hiraeth Infinite",
     period: "October 2024 - Present",
@@ -29,22 +56,20 @@ const experiences = [
     ],
   },
   {
-    title: "Frontend Developer",
+    title: "Senior Frontend Developer",
     company: "Workstream",
-    period: "July 2024 - Present",
+    period: "July 2024 - September 2025",
     location: "Hybrid, Belfast, Northern Ireland",
-    type: "Current Role",
+    type: "Full-time",
     description:
       "Frontend development of enterprise SaaS platform with focus on self-managed development of multiple proof-of-concept features leading to production implementations.",
     achievements: [
-      "Frontend development of enterprise SaaS platform",
       "Self-managed development of multiple proof-of-concept features, leading to production implementations",
       "Translated complex Figma designs into pixel-perfect React components with full responsiveness",
       "Architected and developed comprehensive component library using Next.js, TypeScript, and Tailwind CSS, reducing development time",
       "Led React 19 migration initiative, implementing new concurrent features and optimizing application performance",
       "Implemented robust form validation using Formik and Yup schemas for enterprise data collection",
       "Mentored 3 junior developers on React best practices and TypeScript implementation",
-      "Participated in full software development lifecycle including code reviews and Azure DevOps workflows",
     ],
     technologies: [
       "React 19",

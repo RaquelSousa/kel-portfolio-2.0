@@ -21,7 +21,7 @@ export function TechStackDisplay({ techStack }: TechStackDisplayProps) {
             className="group relative animate-float-up"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="cyber-card px-4 py-2 rounded-none font-mono text-sm group-hover:neon-glow transition-all duration-300 cursor-default">
+            <div className="flex items-center justify-center cyber-card px-4 py-2 rounded-none font-mono text-sm group-hover:neon-glow transition-all duration-300 cursor-default">
               <span className="text-cyan-400">[{tech.icon}]</span>
               <span className="text-cyan-100 ml-2">{tech.name}</span>
             </div>

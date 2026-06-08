@@ -1,4 +1,3 @@
-import { RadixToaster } from "kel-ui-components";
 import { SonnerToaster } from "kel-ui-components";
 import { TooltipProvider } from "kel-ui-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -12,6 +11,7 @@ import { useAnalytics } from "./hooks/useAnalytics";
 import { trackError } from "./lib/analytics";
 import { ScrollProgress } from "kel-ui-components";
 import { pageVariants } from "@/lib/animations";
+import { Navigation } from "@/components/Navigation";
 
 const Index = lazy(() => import("./pages/Index"));
 const Blog = lazy(() => import("./pages/Blog"));
@@ -35,6 +35,8 @@ function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
 
+import { RouteTracker } from "./components/RouteTracker";
+
 const App = () => (
   <ErrorBoundary
     showDetails={process.env.NODE_ENV === "development"}
@@ -44,7 +46,7 @@ const App = () => (
       trackError(error, {
         level: "critical",
         component: "App",
-        errorInfo: errorInfo.componentStack,
+        errorInfo: errorInfo?.componentStack || "",
         userAgent: navigator.userAgent,
         url: window.location.href,
       });
@@ -55,9 +57,10 @@ const App = () => (
         <AnalyticsProvider>
           <ScrollProgress />
 
-          <RadixToaster />
           <SonnerToaster />
           <BrowserRouter>
+            <RouteTracker />
+            <Navigation />
             <AnimatePresence mode="wait">
               <Suspense fallback={<RouteLoader />}>
                 <Routes>

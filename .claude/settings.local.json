@@ -1,9 +1,19 @@
 {
   "permissions": {
     "allow": [
-      "Bash(bun run lint:*)",
-      "Bash(bun run:*)"
-    ],
-    "deny": []
+      "Skill(update-config)",
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "PowerShell(git config *)",
+      "Bash(git remote *)",
+      "Bash(git ls-remote *)",
+      "Bash(git fetch *)",
+      "Bash(set -e)",
+      "Bash(git branch *)",
+      "Bash(git update-ref *)",
+      "Bash(git reset *)",
+      "Bash(awk '{print $1}')",
+      "Bash(git switch *)"
+    ]
   }
 }

@@ -7,43 +7,43 @@ const achievements = [
     icon: Building2,
     title: "CO-FOUNDED HIRAETH INFINITE",
     description:
-      "Technology consultancy delivering scalable web applications and digital transformation solutions for enterprise clients",
+      "Technology consultancy delivering scalable web applications and AI integration solutions for enterprise clients",
     metric: "3+ client projects",
   },
   {
     icon: Target,
-    title: "DEPLOYED 3 PRODUCTION SAAS SYSTEMS",
+    title: "ARCHITECTED AI LEGAL PLATFORM",
     description:
-      "Enterprise-grade applications serving global clients with React/TypeScript architecture",
-    metric: "99.9% uptime",
+      "Sole developer building multi-user legal-tech platform with integrated AI collaboration",
+    metric: "Production deployed",
   },
   {
     icon: Zap,
-    title: "LED REACT 19 MIGRATION PROTOCOL",
+    title: "RAG & LLM ORCHESTRATION",
+    description:
+      "Implemented intelligent routing and retrieval-augmented generation for contextual document analysis",
+    metric: "Contextual AI",
+  },
+  {
+    icon: Cpu,
+    title: "LOCAL AI INFERENCE",
+    description:
+      "Self-directed research and implementation of local models (vMLX, Ollama) and custom agent workflows",
+    metric: "Optimized pipelines",
+  },
+  {
+    icon: Users,
+    title: "LED REACT 19 MIGRATION",
     description:
       "Successfully migrated production platform leveraging concurrent rendering features",
     metric: "40% performance boost",
   },
-  {
-    icon: Users,
-    title: "MENTORED 3 JUNIOR DEVELOPERS",
-    description:
-      "Accelerated team growth through modern frontend practices and code review protocols",
-    metric: "3x faster onboarding",
-  },
-  {
-    icon: Cpu,
-    title: "AUTONOMOUS INNOVATION PIPELINE",
-    description:
-      "Self-managed POC development using structured Jira roadmaps and experimentation",
-    metric: "12+ features deployed",
-  },
 ];
 
 const dataPoints = [
-  { label: "YEARS_ACTIVE", value: "6+", color: "text-cyan-400" },
-  { label: "CLIENT_PROJECTS_DELIVERED", value: "3+", color: "text-purple-400" },
-  { label: "PERFORMANCE_GAIN", value: "40%", color: "text-green-400" },
+  { label: "YEARS_ACTIVE", value: "8+", color: "text-cyan-400" },
+  { label: "SAAS_PLATFORMS_BUILT", value: "4+", color: "text-purple-400" },
+  { label: "AI_PIPELINES_DEPLOYED", value: "Multiple", color: "text-green-400" },
   { label: "TEAM_MEMBERS_MENTORED", value: "3", color: "text-orange-400" },
 ];
 
@@ -69,15 +69,14 @@ export function About() {
               <span className="cyber-text">EXCEPTIONAL EXPERIENCES</span>
             </h2>
             <div className="cyber-card rounded-none p-4 sm:p-6 max-w-4xl mx-auto">
-              <p className="text-sm sm:text-lg lg:text-xl text-cyan-100 font-mono leading-relaxed">
-                <span className="text-cyan-400">[MISSION_STATEMENT]</span>
-                <br />
-                I DON'T JUST WRITE CODE—I ARCHITECT DIGITAL EXPERIENCES THAT
-                USERS LOVE
-                <br className="hidden sm:block" />
-                <span className="sm:hidden"> </span>AND BUSINESSES DEPEND ON.
-                TECHNICAL EXCELLENCE + INNOVATIVE THINKING = SUCCESS.
-              </p>
+              <div className="space-y-2 text-sm sm:text-lg lg:text-xl text-cyan-100 font-mono leading-relaxed">
+                <p className="text-cyan-400">[MISSION_STATEMENT]</p>
+                <p>
+                  I DON'T JUST WRITE CODE - I ARCHITECT INTELLIGENT DIGITAL
+                  EXPERIENCES POWERED BY CUTTING-EDGE AI. TECHNICAL EXCELLENCE +
+                  MACHINE LEARNING = THE FUTURE.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -92,25 +91,23 @@ export function About() {
                     <div className="space-y-3 sm:space-y-4 text-cyan-100 leading-relaxed font-mono text-xs sm:text-sm">
                       <div>
                         <span className="text-cyan-400">[INIT] </span>
-                        6+ YEARS AGO: CURIOSITY ABOUT WEB ARCHITECTURE INITIATED
+                        8+ YEARS AGO: CURIOSITY ABOUT WEB ARCHITECTURE INITIATED
                       </div>
                       <div>
-                        <span className="text-purple-400">[DEPLOY] </span>
-                        TODAY: CO-FOUNDED HIRAETH INFINITE TO DELIVER ENTERPRISE SOLUTIONS
+                        <span className="text-purple-400">[TRANSITION] </span>
+                        EVOLVED INTO AI ENGINEERING, MASTERING RAG & LLM ORCHESTRATION
                       </div>
                       <div>
-                        <span className="text-green-400">[UNIQUE] </span>
-                        SELF-MANAGED INNOVATION PIPELINE + TECHNICAL ROADMAP
-                        MAINTENANCE
+                        <span className="text-green-400">[INNOVATION] </span>
+                        SELF-DIRECTED RESEARCH INTO LOCAL AI INFERENCE & CUSTOM AGENTS
                       </div>
                       <div>
-                        <span className="text-orange-400">[RESULT] </span>
-                        POC DEVELOPMENT → PRODUCTION FEATURES + TEAM
-                        ACCELERATION
+                        <span className="text-orange-400">[DEPLOY] </span>
+                        CO-FOUNDED HIRAETH INFINITE & ARCHITECTED AI LEGAL PLATFORM
                       </div>
                       <div>
                         <span className="text-pink-400">[IMPACT] </span>
-                        REACT 19 CONCURRENT FEATURES + 40% DEV TIME REDUCTION
+                        DELIVERING CONTEXT-AWARE INTELLIGENCE WITH MODERN TECH STACKS
                       </div>
                     </div>
                   </div>
@@ -183,7 +180,7 @@ export function About() {
                 </h3>
                 <p className="text-lg text-cyan-100 max-w-3xl mx-auto leading-relaxed font-mono">
                   <span className="text-cyan-400">[PROTOCOL] </span>I DON'T WAIT
-                  FOR REQUIREMENTS—I ANTICIPATE THEM.
+                  FOR REQUIREMENTS - I ANTICIPATE THEM.
                   <br />
                   <span className="text-purple-400">[PIPELINE] </span>STRUCTURED
                   INNOVATION CONSISTENTLY DELIVERS CRITICAL SOLUTIONS.

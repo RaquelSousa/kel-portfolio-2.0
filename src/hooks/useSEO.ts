@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect } from "react";
 import { StructuredData } from "@/utils/structuredData";
 
 interface SEOConfig {

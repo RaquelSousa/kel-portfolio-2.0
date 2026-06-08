@@ -17,7 +17,7 @@ cd kel-portfolio-2.0
 2. **Install dependencies**
 
 ```bash
-npm install
+bun install
 ````
 
 3. **Set up environment variables**
@@ -34,7 +34,7 @@ npm install
 
 4. **Start the development server**
    ```bash
-   npm run dev
+   bun run dev
    ```
 
 The application will be available at `http://localhost:8080`
@@ -57,37 +57,41 @@ This project uses EmailJS for contact form functionality. You'll need to:
 
 ### Development
 
-- `npm run dev` - Start development server
-- `npm run preview` - Preview production build locally
+- `bun run dev` - Start development server
+- `bun run preview` - Preview production build locally
 
 ### Building
 
-- `npm run build` - Build for production
-- `npm run build:dev` - Build in development mode
-- `npm run build:analyze` - Build and analyze bundle size
-- `npm run build:stats` - Build with verbose reporter
+- `bun run build` - Build for production
+- `bun run build:dev` - Build in development mode
+- `bun run build:analyze` - Build and analyze bundle size
+- `bun run build:stats` - Build with verbose reporter
 
 ### Testing
 
-- `npm run test` - Run unit tests
-- `npm run test:ui` - Run tests with UI
-- `npm run test:run` - Run tests once
-- `npm run test:coverage` - Run tests with coverage report
+- `bun run test` - Run unit tests
+- `bun run test:ui` - Run tests with UI
+- `bun run test:run` - Run tests once
+- `bun run test:coverage` - Run tests with coverage report
 
 ### End-to-End Testing
 
-- `npm run test:e2e` - Run Cypress tests headlessly
-- `npm run test:e2e:open` - Open Cypress test runner
+- `bun run test:e2e` - Run Cypress tests headlessly
+- `bun run test:e2e:open` - Open Cypress test runner
 
 ### Code Quality
 
-- `npm run lint` - Run ESLint
-- `npm run seo:audit` - Run SEO audit
+- `bun run lint` - Run ESLint
+- `bun run seo:audit` - Run SEO audit
+- `bun run audit:lighthouse` - Lighthouse audit (perf/a11y/SEO) against the running dev server
+- `bun run audit:a11y` - axe-core accessibility audit against the running dev server
+- `bun run audit:deadcode` - Fallow: find unused files/exports/dependencies
+- `bun run audit:health` - Fallow: codebase health & complexity score
 
 ### Bundle Analysis
 
-- `npm run bundle:analyze` - Analyze bundle composition
-- `npm run preview:size` - Show built asset sizes
+- `bun run bundle:analyze` - Analyze bundle composition
+- `bun run preview:size` - Show built asset sizes
 
 ## 🛠️ Tech Stack
 
@@ -121,7 +125,7 @@ src/
 1. **Build the project**
 
    ```bash
-   npm run build
+   bun run build
    ```
 
 2. **Deploy the `dist` folder** to your hosting platform of choice (Vercel, Netlify, etc.)

@@ -1,6 +1,6 @@
 export interface AnalyticsEvent {
   name: string;
-  properties?: Record<string, string | number | boolean | object>;
+  properties?: Record<string, string | number | boolean | object | undefined | null>;
   timestamp?: number;
   userId?: string;
   sessionId?: string;
@@ -59,8 +59,7 @@ class AnalyticsService {
   };
   private pageStartTime = Date.now();
   private isScrollTracking = false;
-  private lastScrollTime = 0;
-  private flushTimer: NodeJS.Timeout | null = null;
+
 
   static getInstance(): AnalyticsService {
     if (!AnalyticsService.instance) {
@@ -83,7 +82,7 @@ class AnalyticsService {
 
   track(
     eventName: string,
-    properties?: Record<string, string | number | boolean | object>
+    properties?: Record<string, string | number | boolean | object | undefined | null>
   ): void {
     const event: AnalyticsEvent = {
       name: eventName,
@@ -321,7 +320,7 @@ class AnalyticsService {
     let ticking = false;
 
     const handleScroll = () => {
-      this.lastScrollTime = Date.now();
+
 
       if (!ticking) {
         requestAnimationFrame(() => {
@@ -377,7 +376,7 @@ class AnalyticsService {
   }
 
   private startFlushTimer(): void {
-    this.flushTimer = setInterval(() => {
+    setInterval(() => {
       this.flush();
     }, this.config.flushInterval);
   }
@@ -403,7 +402,7 @@ export const trackPageView = (page?: string, title?: string) =>
 
 export const trackEvent = (
   name: string,
-  properties?: Record<string, string | number | boolean | object>
+  properties?: Record<string, string | number | boolean | object | undefined | null>
 ) => analytics.track(name, properties);
 
 export const trackError = (

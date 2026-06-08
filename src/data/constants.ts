@@ -2,7 +2,7 @@ import { TechStackItem, Project, OtherProject } from "@/types";
 
 export const TECH_STACK: TechStackItem[] = [
   {
-    name: "React",
+    name: "React 19",
     color: "from-cyan-400 to-blue-500",
     icon: "⚛️",
     category: "frontend",
@@ -12,6 +12,30 @@ export const TECH_STACK: TechStackItem[] = [
     color: "from-blue-500 to-indigo-600",
     icon: "📘",
     category: "frontend",
+  },
+  {
+    name: "Python",
+    color: "from-yellow-400 to-yellow-600",
+    icon: "🐍",
+    category: "backend",
+  },
+  {
+    name: "RAG Pipelines",
+    color: "from-emerald-400 to-teal-600",
+    icon: "📚",
+    category: "backend",
+  },
+  {
+    name: "LLM Orchestration",
+    color: "from-purple-400 to-pink-600",
+    icon: "🤖",
+    category: "backend",
+  },
+  {
+    name: "Local AI Inference",
+    color: "from-orange-400 to-red-500",
+    icon: "🧠",
+    category: "backend",
   },
   {
     name: "Next.js",
@@ -26,26 +50,40 @@ export const TECH_STACK: TechStackItem[] = [
     category: "backend",
   },
   {
-    name: "Azure",
+    name: "Azure & GCP",
     color: "from-blue-400 to-cyan-500",
     icon: "☁️",
     category: "cloud",
   },
-  {
-    name: "Vercel",
-    color: "from-black to-gray-800",
-    icon: "▲",
-    category: "cloud",
-  },
-  {
-    name: "PostgreSQL",
-    color: "from-green-500 to-emerald-600",
-    icon: "🍃",
-    category: "database",
-  },
 ];
 
 export const PROJECTS: Project[] = [
+  {
+    title: "AI-Powered Legal Platform",
+    description: "Enterprise SaaS platform utilizing RAG pipelines and multi-model orchestration to deliver contextual AI assistance for legal professionals.",
+    problem: "Legal document analysis and case creation require significant manual effort and context switching.",
+    solution: "A collaborative workspace with intelligent AI agents capable of file verification, contextual search, and automated report generation.",
+    impact: "Dramatically reduced document processing time while providing grounded, case-specific AI insights.",
+    features: [
+      "RAG Document Search",
+      "Multi-Model Orchestration",
+      "AI File Verification",
+      "Real-time Collaboration",
+      "Admin Analytics"
+    ],
+    technologies: [
+      "React 19",
+      "Python",
+      "LLMs",
+      "RAG",
+      "Local AI",
+      "TypeScript",
+      "Azure"
+    ],
+    demo: "",
+    github: "",
+    status: "completed",
+  },
   {
     title: "Software Development Company Website",
     description: "Website for Hiraeth Infinite, a technology consultancy I co-founded specializing in modern web applications and digital transformation",

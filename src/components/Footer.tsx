@@ -1,6 +1,6 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "kel-ui-components";
-import { NewsletterForm } from "@/components/forms";
+
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -38,7 +38,7 @@ export function Footer() {
                 </Button>
                 <Button variant="ghost" size="sm" asChild>
                   <a
-                    href="https://www.linkedin.com/in/raquel-sousa-frontend-developer/"
+                    href="https://www.linkedin.com/in/raquel-sousa-software-engineer/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
