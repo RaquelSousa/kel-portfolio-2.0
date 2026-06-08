@@ -49,7 +49,7 @@ function NavItem({
     containerClasses = `flex items-center px-3 py-1 text-xs font-mono transition-all duration-300 ${isActive ? "text-cyan-400 bg-cyan-400/20" : "text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10"}`;
     content = (
       <>
-        <span>{item.code}</span>
+        <span>{item.label.toUpperCase()}</span>
         {!isLast && <span className="text-cyan-400/50 ml-2" aria-hidden="true">|</span>}
       </>
     );
