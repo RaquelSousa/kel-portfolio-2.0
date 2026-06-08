@@ -1,34 +1,93 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Github, Linkedin, Mail } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "kel-ui-components";
 
 const navItems = [
-  { href: "#home", label: "Home", symbol: "◉", code: "HOME", type: "hash" },
-  { href: "#about", label: "About", symbol: "◈", code: "ABOUT", type: "hash" },
-  {
-    href: "#experience",
-    label: "Experience",
-    symbol: "◊",
-    code: "EXP",
-    type: "hash",
-  },
-  {
-    href: "#projects",
-    label: "Projects",
-    symbol: "◆",
-    code: "PROJ",
-    type: "hash",
-  },
-  { href: "/blog", label: "Blog", symbol: "◇", code: "BLOG", type: "route" },
-  {
-    href: "#contact",
-    label: "Contact",
-    symbol: "◎",
-    code: "CONTACT",
-    type: "hash",
-  },
+  { href: "#home", label: "Home", symbol: "◉", code: "HOME", type: "hash" as const },
+  { href: "#about", label: "About", symbol: "◈", code: "ABOUT", type: "hash" as const },
+  { href: "#experience", label: "Experience", symbol: "◊", code: "EXP", type: "hash" as const },
+  { href: "#projects", label: "Projects", symbol: "◆", code: "PROJ", type: "hash" as const },
+  { href: "/blog", label: "Blog", symbol: "◇", code: "BLOG", type: "route" as const },
+  { href: "#contact", label: "Contact", symbol: "◎", code: "CONTACT", type: "hash" as const },
 ];
+
+function NavItem({ 
+  item, 
+  variant, 
+  isActive, 
+  onClick, 
+  onKeyDown,
+  isLast = false
+}: { 
+  item: typeof navItems[0]; 
+  variant: "sidebar" | "top" | "mobile"; 
+  isActive: boolean; 
+  onClick: (item: typeof navItems[0]) => void;
+  onKeyDown: (event: React.KeyboardEvent<HTMLElement>, item: typeof navItems[0]) => void;
+  isLast?: boolean;
+}) {
+  let containerClasses = "";
+  let content = null;
+
+  if (variant === "sidebar") {
+    containerClasses = `flex items-center gap-3 w-full mb-1 px-3 py-2 rounded-none border-l-2 font-mono text-xs text-left transition-all duration-300 ${isActive ? "bg-gradient-to-r from-cyan-400/20 to-purple-600/20 border-cyan-400 text-cyan-400" : "border-transparent text-cyan-100 hover:bg-cyan-400/10 hover:border-cyan-400/50 hover:text-cyan-400"}`;
+    content = (
+      <>
+        <span
+          className="w-4 shrink-0 text-center text-sm leading-none text-cyan-400"
+          aria-hidden="true"
+        >
+          {item.symbol}
+        </span>
+        <span className="tracking-wider whitespace-nowrap">
+          {item.label.toUpperCase()}
+        </span>
+      </>
+    );
+  } else if (variant === "top") {
+    containerClasses = `flex items-center px-3 py-1 text-xs font-mono transition-all duration-300 ${isActive ? "text-cyan-400 bg-cyan-400/20" : "text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10"}`;
+    content = (
+      <>
+        <span>{item.code}</span>
+        {!isLast && <span className="text-cyan-400/50 ml-2" aria-hidden="true">|</span>}
+      </>
+    );
+  } else if (variant === "mobile") {
+    containerClasses = `block w-full text-left p-3 rounded-none font-mono transition-all duration-300 ${isActive ? "bg-gradient-to-r from-cyan-400/20 to-purple-600/20 border-l-4 border-cyan-400 text-cyan-400" : "text-cyan-100 hover:bg-cyan-400/10 hover:border-l-4 hover:border-cyan-400/50"}`;
+    content = (
+      <div className="flex items-center gap-3">
+        <span className="text-cyan-400" aria-hidden="true">{item.symbol}</span>
+        <span className="text-sm">{item.label}</span>
+      </div>
+    );
+  }
+
+  if (item.type === "route") {
+    return (
+      <Link
+        to={item.href}
+        aria-label={`Navigate to ${item.label} page`}
+        aria-current={isActive ? "page" : undefined}
+        className={containerClasses}
+      >
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button
+      onClick={() => onClick(item)}
+      onKeyDown={(e) => onKeyDown(e, item)}
+      aria-label={`Navigate to ${item.label} section`}
+      aria-current={isActive ? "page" : undefined}
+      className={containerClasses}
+    >
+      {content}
+    </button>
+  );
+}
 
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
@@ -90,7 +149,7 @@ export function Navigation() {
   };
 
   const handleKeyDown = (
-    event: React.KeyboardEvent,
+    event: React.KeyboardEvent<HTMLElement>,
     item: (typeof navItems)[0]
   ) => {
     if (event.key === "Enter" || event.key === " ") {
@@ -112,80 +171,24 @@ export function Navigation() {
   return (
     <>
       <nav
-        role="navigation"
         aria-label="Main navigation"
-        className="fixed right-4 lg:right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-2"
+        className="fixed z-50 hidden lg:flex flex-col gap-2"
+        style={{ right: '2rem', top: '50%', transform: 'translateY(-50%)' }}
       >
         <div className="cyber-card rounded-none p-4 backdrop-blur-md">
           <div className="text-cyan-400 text-xs font-mono mb-4 tracking-wider">
             &gt; NAV_SYSTEM
           </div>
-          {navItems.map((item) =>
-            item.type === "route" ? (
-              <Link
-                key={item.href}
-                to={item.href}
-                aria-label={`Navigate to ${item.label} page`}
-                aria-current={isItemActive(item) ? "page" : undefined}
-                className={`group relative w-full mb-2 p-2 rounded-none transition-all duration-300 font-mono text-left block ${
-                  isItemActive(item)
-                    ? "bg-gradient-to-r from-cyan-400/20 to-purple-600/20 border-l-2 border-cyan-400 text-cyan-400"
-                    : "hover:bg-cyan-400/10 hover:border-l-2 hover:border-cyan-400/50 text-cyan-100"
-                }`}
-              >
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-cyan-400" aria-hidden="true">
-                    {item.symbol}
-                  </span>
-                  <span>{item.code}</span>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <div
-                  className="absolute right-full top-1/2 -translate-y-1/2 mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-                  role="tooltip"
-                  aria-hidden="true"
-                >
-                  <div className="cyber-card bg-black/90 text-cyan-400 text-xs px-3 py-1 rounded-none whitespace-nowrap font-mono">
-                    &gt; {item.label.toUpperCase()}
-                  </div>
-                </div>
-              </Link>
-            ) : (
-              <button
-                key={item.href}
-                onClick={() => handleNavigation(item)}
-                onKeyDown={(event) => handleKeyDown(event, item)}
-                aria-label={`Navigate to ${item.label} section`}
-                aria-current={isItemActive(item) ? "page" : undefined}
-                className={`group relative w-full mb-2 p-2 rounded-none transition-all duration-300 font-mono text-left ${
-                  isItemActive(item)
-                    ? "bg-gradient-to-r from-cyan-400/20 to-purple-600/20 border-l-2 border-cyan-400 text-cyan-400"
-                    : "hover:bg-cyan-400/10 hover:border-l-2 hover:border-cyan-400/50 text-cyan-100"
-                }`}
-              >
-                <div className="flex items-center justify-between text-xs">
-                  <span className="text-cyan-400" aria-hidden="true">
-                    {item.symbol}
-                  </span>
-                  <span>{item.code}</span>
-                </div>
-
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                <div
-                  className="absolute right-full top-1/2 -translate-y-1/2 mr-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none"
-                  role="tooltip"
-                  aria-hidden="true"
-                >
-                  <div className="cyber-card bg-black/90 text-cyan-400 text-xs px-3 py-1 rounded-none whitespace-nowrap font-mono">
-                    &gt; {item.label.toUpperCase()}
-                  </div>
-                </div>
-              </button>
-            )
-          )}
+          {navItems.map((item) => (
+            <NavItem
+              key={item.href}
+              item={item}
+              variant="sidebar"
+              isActive={isItemActive(item)}
+              onClick={handleNavigation}
+              onKeyDown={handleKeyDown}
+            />
+          ))}
         </div>
       </nav>
 
@@ -193,10 +196,9 @@ export function Navigation() {
         className={`fixed top-0 w-full z-40 transition-all duration-500 ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
-        role="banner"
       >
-        <div className="absolute inset-0 bg-black/20 backdrop-blur-md" />
-        <div className="relative container mx-auto px-4 py-4">
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-md z-0" />
+        <div className="relative z-10 container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="cyber-card rounded-none px-4 py-2 font-mono">
               <span className="text-cyan-400 text-sm">&gt; </span>
@@ -207,63 +209,26 @@ export function Navigation() {
             </div>
 
             <nav
-              className="hidden md:flex items-center gap-1 cyber-card rounded-none px-4 py-2"
+              className="hidden lg:flex items-center gap-1 cyber-card rounded-none px-4 py-2"
               aria-label="Desktop navigation"
             >
-              {navItems.map((item, index) =>
-                item.type === "route" ? (
-                  <Link
-                    key={item.href}
-                    to={item.href}
-                    aria-label={`Navigate to ${item.label} page`}
-                    aria-current={isItemActive(item) ? "page" : undefined}
-                    className={`px-3 py-1 text-xs font-mono transition-all duration-300 ${
-                      isItemActive(item)
-                        ? "text-cyan-400 bg-cyan-400/20"
-                        : "text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10"
-                    }`}
-                  >
-                    {item.code}
-                    {index < navItems.length - 1 && (
-                      <span
-                        className="text-cyan-400/50 ml-2"
-                        aria-hidden="true"
-                      >
-                        |
-                      </span>
-                    )}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.href}
-                    onClick={() => handleNavigation(item)}
-                    onKeyDown={(event) => handleKeyDown(event, item)}
-                    aria-label={`Navigate to ${item.label} section`}
-                    aria-current={isItemActive(item) ? "page" : undefined}
-                    className={`px-3 py-1 text-xs font-mono transition-all duration-300 ${
-                      isItemActive(item)
-                        ? "text-cyan-400 bg-cyan-400/20"
-                        : "text-cyan-100 hover:text-cyan-400 hover:bg-cyan-400/10"
-                    }`}
-                  >
-                    {item.code}
-                    {index < navItems.length - 1 && (
-                      <span
-                        className="text-cyan-400/50 ml-2"
-                        aria-hidden="true"
-                      >
-                        |
-                      </span>
-                    )}
-                  </button>
-                )
-              )}
+              {navItems.map((item, index) => (
+                <NavItem
+                  key={item.href}
+                  item={item}
+                  variant="top"
+                  isActive={isItemActive(item)}
+                  onClick={handleNavigation}
+                  onKeyDown={handleKeyDown}
+                  isLast={index === navItems.length - 1}
+                />
+              ))}
             </nav>
 
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden cyber-card border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 touch-target"
+              className="lg:hidden cyber-card border-cyan-400/50 text-cyan-400 hover:bg-cyan-400/10 touch-target"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               aria-expanded={mobileMenuOpen}
@@ -277,64 +242,32 @@ export function Navigation() {
           </div>
         </div>
 
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-md border-b border-cyan-400/30">
-            <nav
-              className="container mx-auto px-4 py-4"
-              aria-label="Mobile navigation"
-            >
-              <div className="space-y-2">
-                {navItems.map((item) =>
-                  item.type === "route" ? (
-                    <Link
-                      key={item.href}
-                      to={item.href}
-                      className={`block w-full text-left p-3 rounded-none font-mono transition-all duration-300 ${
-                        isItemActive(item)
-                          ? "bg-gradient-to-r from-cyan-400/20 to-purple-600/20 border-l-4 border-cyan-400 text-cyan-400"
-                          : "text-cyan-100 hover:bg-cyan-400/10 hover:border-l-4 hover:border-cyan-400/50"
-                      }`}
-                      aria-label={`Navigate to ${item.label} page`}
-                      aria-current={isItemActive(item) ? "page" : undefined}
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-cyan-400" aria-hidden="true">
-                          {item.symbol}
-                        </span>
-                        <span className="text-sm">{item.label}</span>
-                      </div>
-                    </Link>
-                  ) : (
-                    <button
-                      key={item.href}
-                      onClick={() => handleNavigation(item)}
-                      className={`block w-full text-left p-3 rounded-none font-mono transition-all duration-300 ${
-                        isItemActive(item)
-                          ? "bg-gradient-to-r from-cyan-400/20 to-purple-600/20 border-l-4 border-cyan-400 text-cyan-400"
-                          : "text-cyan-100 hover:bg-cyan-400/10 hover:border-l-4 hover:border-cyan-400/50"
-                      }`}
-                      aria-label={`Navigate to ${item.label} section`}
-                      aria-current={isItemActive(item) ? "page" : undefined}
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="text-cyan-400" aria-hidden="true">
-                          {item.symbol}
-                        </span>
-                        <span className="text-sm">{item.label}</span>
-                      </div>
-                    </button>
-                  )
-                )}
-              </div>
-            </nav>
-          </div>
-        )}
-
         <div
           className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-          aria-hidden="true"
         />
       </header>
+
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed top-[72px] left-0 w-full bg-black/95 backdrop-blur-md border-b border-cyan-400/30 shadow-xl z-50">
+          <nav
+            className="container mx-auto px-4 py-4"
+            aria-label="Mobile navigation"
+          >
+            <div className="space-y-2">
+              {navItems.map((item) => (
+                <NavItem
+                  key={item.href}
+                  item={item}
+                  variant="mobile"
+                  isActive={isItemActive(item)}
+                  onClick={handleNavigation}
+                  onKeyDown={handleKeyDown}
+                />
+              ))}
+            </div>
+          </nav>
+        </div>
+      )}
     </>
   );
 }

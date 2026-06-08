@@ -90,13 +90,6 @@ export function Hero() {
                     type: "spring",
                     stiffness: 100,
                   }}
-                  style={{
-                    animation: window.matchMedia(
-                      "(prefers-reduced-motion: reduce)"
-                    ).matches
-                      ? "none"
-                      : undefined,
-                  }}
                   aria-live="polite"
                   aria-atomic="true"
                 >
@@ -112,20 +105,13 @@ export function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                &gt; CO-CEO_&_SENIOR_FRONTEND_DEVELOPER.exe
+                &gt; LEAD_FULL_STACK_AI_ENGINEER_&_TECHNICAL_LEAD.exe
               </motion.h2>
               <motion.div
                 className="absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 w-2 sm:w-3 h-4 sm:h-6 bg-cyan-400"
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
                 aria-hidden="true"
-                style={{
-                  animation: window.matchMedia(
-                    "(prefers-reduced-motion: reduce)"
-                  ).matches
-                    ? "none"
-                    : undefined,
-                }}
               />
             </motion.div>
 
@@ -160,43 +146,43 @@ export function Hero() {
                 !isMobile ? hoverAnimation.handleMouseLeave : undefined
               }
             >
-              <motion.p
-                className="text-sm sm:text-lg md:text-xl text-cyan-100 leading-relaxed font-mono"
+              <motion.div
+                className="space-y-1.5 sm:space-y-2 text-sm sm:text-lg md:text-xl text-cyan-100 leading-relaxed font-mono break-words"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.2 }}
               >
-                <motion.span
-                  className="text-cyan-400"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  [SYSTEM_LOG]
-                </motion.span>{" "}
-                6+ YEARS CRAFTING EXCEPTIONAL DIGITAL EXPERIENCES
-                <br className="hidden sm:block" />
-                <span className="sm:hidden"> • </span>
-                <motion.span
-                  className="text-purple-400"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-                >
-                  [STACK]
-                </motion.span>{" "}
-                REACT • TYPESCRIPT • NEXT.JS
-                <br className="hidden sm:block" />
-                <span className="sm:hidden"> • </span>
-                <motion.span
-                  className="text-green-400"
-                  animate={{ opacity: [0.7, 1, 0.7] }}
-                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                >
-                  [STATUS]
-                </motion.span>{" "}
-                <span className="break-words">
+                <p>
+                  <motion.span
+                    className="text-cyan-400"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    [SYSTEM_LOG]
+                  </motion.span>{" "}
+                  8+ YEARS CRAFTING EXCEPTIONAL DIGITAL EXPERIENCES
+                </p>
+                <p>
+                  <motion.span
+                    className="text-purple-400"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  >
+                    [STACK]
+                  </motion.span>{" "}
+                  REACT • TYPESCRIPT • PYTHON • LLMs • RAG
+                </p>
+                <p>
+                  <motion.span
+                    className="text-green-400"
+                    animate={{ opacity: [0.7, 1, 0.7] }}
+                    transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                  >
+                    [STATUS]
+                  </motion.span>{" "}
                   BUILDING THE FUTURE, ONE COMPONENT AT A TIME • LEADING DIGITAL TRANSFORMATION
-                </span>
-              </motion.p>
+                </p>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -236,12 +222,6 @@ export function Hero() {
               }}
               transition={{ duration: 3, repeat: Infinity }}
               aria-hidden="true"
-              style={{
-                animation: window.matchMedia("(prefers-reduced-motion: reduce)")
-                  .matches
-                  ? "none"
-                  : undefined,
-              }}
             />
           </motion.div>
 
@@ -282,12 +262,6 @@ export function Hero() {
             }}
             transition={{ duration: 2, repeat: Infinity }}
             aria-hidden="true"
-            style={{
-              animation: window.matchMedia("(prefers-reduced-motion: reduce)")
-                .matches
-                ? "none"
-                : undefined,
-            }}
           />
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -296,12 +270,6 @@ export function Hero() {
             <Code2
               className="w-4 h-4 text-cyan-400 mt-2"
               aria-hidden="true"
-              style={{
-                animation: window.matchMedia("(prefers-reduced-motion: reduce)")
-                  .matches
-                  ? "none"
-                  : undefined,
-              }}
             />
           </motion.div>
         </motion.div>
