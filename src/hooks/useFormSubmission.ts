@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { toast } from "sonner";
 
 interface UseFormSubmissionOptions<T> {
   onSubmit: (data: T) => Promise<void>;
@@ -17,7 +17,6 @@ export function useFormSubmission<T>({
   errorMessage = "An error occurred. Please try again.",
 }: UseFormSubmissionOptions<T>) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   const submit = async (data: T) => {
     if (isSubmitting) return;
@@ -27,8 +26,7 @@ export function useFormSubmission<T>({
     try {
       await onSubmit(data);
 
-      toast({
-        title: "Success",
+      toast.success("Success", {
         description: successMessage,
       });
 
@@ -37,10 +35,8 @@ export function useFormSubmission<T>({
       const errorObj =
         error instanceof Error ? error : new Error("Unknown error");
 
-      toast({
-        title: "Error",
+      toast.error("Error", {
         description: errorMessage,
-        variant: "destructive",
       });
 
       onError?.(errorObj, data);

@@ -226,7 +226,7 @@ class SEOAuditor {
     if (this.checkFile(heroFile, "Hero component")) {
       this.checkFileContent(
         heroFile,
-        /<h1/,
+        /<h1|<motion\.h1/,
         "H1 tag present in Hero component"
       );
     }

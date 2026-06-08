@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { motion } from "framer-motion";
@@ -57,9 +56,7 @@ const Blog = () => {
         canonical="https://raquelsousa.dev/blog"
       />
 
-      <Navigation />
-
-      <main className="min-h-screen bg-background relative overflow-hidden">
+      <main id="main-content" tabIndex={-1} className="min-h-screen bg-background relative overflow-hidden focus:outline-none">
         <div className="absolute inset-0 bg-gradient-to-br from-black/50 via-gray-900/50 to-black/50">
           <div className="absolute inset-0 bg-gradient-to-t from-cyan-400/5 via-transparent to-purple-600/5" />
         </div>

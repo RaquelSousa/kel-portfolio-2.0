@@ -1,9 +1,7 @@
 import {
-  Download,
   Github,
   Linkedin,
   Mail,
-  Terminal,
   FileText,
 } from "lucide-react";
 import { Button } from "kel-ui-components";
@@ -66,9 +64,9 @@ export function CyberActionButtons({
     <TrackingWrapper
       componentName="HeroActionButtons"
       trackScrollView={true}
-      className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8"
+      className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 mt-8 mb-16 sm:mb-0"
     >
-      <div className="flex flex-wrap gap-4 justify-center mb-16">
+      <div className="flex flex-wrap gap-4 justify-center">
         <Button
           size="lg"
           onClick={handleViewProjectsClick}
@@ -107,7 +105,7 @@ export function CyberActionButtons({
         </Button>
       </div>
 
-      <div className="flex gap-4 justify-center mb-16">
+      <div className="flex gap-4 justify-center">
         <Button className="cyber-button w-12 h-12 rounded-none group" asChild>
           <a
             href="https://github.com/RaquelSousa"
@@ -119,7 +117,7 @@ export function CyberActionButtons({
         </Button>
         <Button className="cyber-button w-12 h-12 rounded-none group" asChild>
           <a
-            href="https://www.linkedin.com/in/raquel-sousa-frontend-developer/"
+            href="https://www.linkedin.com/in/raquel-sousa-software-engineer/"
             target="_blank"
             rel="noopener noreferrer"
           >

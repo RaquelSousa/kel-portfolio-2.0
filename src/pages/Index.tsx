@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import {
   SuspendedAbout,
@@ -10,7 +9,7 @@ import {
 } from "@/components/LazyComponents";
 import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
-import ComponentErrorBoundary from "@/components/ComponentErrorBoundary";
+
 import {
   PerformanceMonitor,
   analyzeBundlePerformance,
@@ -23,7 +22,7 @@ import { usePageView, useComponentTracking } from "@/hooks/useAnalytics";
 import { trackEvent } from "@/lib/analytics";
 import AnalyticsDashboard from "@/components/analytics/AnalyticsDashboard";
 
-const Index = () => {
+const Index: React.FC = () => {
   usePageView("/", "Kel's Portfolio - Senior Frontend Developer");
 
   const { trackAction } = useComponentTracking("HomePage");
@@ -143,39 +142,21 @@ const Index = () => {
         </a>
       </div>
 
-      <ComponentErrorBoundary componentName="Navigation" showMinimalUI={true}>
-        <Navigation />
-      </ComponentErrorBoundary>
+      <main id="main-content" role="main" tabIndex={-1} className="focus:outline-none">
+        <Hero />
 
-      <main id="main-content" role="main">
-        <ComponentErrorBoundary componentName="Hero">
-          <Hero />
-        </ComponentErrorBoundary>
+        <SuspendedAbout />
 
-        <ComponentErrorBoundary componentName="About">
-          <SuspendedAbout />
-        </ComponentErrorBoundary>
+        <SuspendedExperience />
 
-        <ComponentErrorBoundary componentName="Experience">
-          <SuspendedExperience />
-        </ComponentErrorBoundary>
+        <SuspendedProjects />
 
-        <ComponentErrorBoundary componentName="Projects">
-          <SuspendedProjects />
-        </ComponentErrorBoundary>
+        <SuspendedSkills />
 
-        <ComponentErrorBoundary componentName="Skills">
-          <SuspendedSkills />
-        </ComponentErrorBoundary>
-
-        <ComponentErrorBoundary componentName="Contact">
-          <SuspendedContact />
-        </ComponentErrorBoundary>
+        <SuspendedContact />
       </main>
 
-      <ComponentErrorBoundary componentName="Footer" showMinimalUI={true}>
-        <Footer />
-      </ComponentErrorBoundary>
+      <Footer />
 
       <AnalyticsDashboard />
     </>

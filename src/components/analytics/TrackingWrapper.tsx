@@ -34,7 +34,7 @@ export function TrackingWrapper({
   const trackInteraction = useInteractionTracking();
 
   useScrollTracking(
-    trackScrollView ? elementRef : { current: null },
+    trackScrollView ? (elementRef as React.RefObject<HTMLElement>) : ({ current: null } as unknown as React.RefObject<HTMLElement>),
     componentName
   );
 

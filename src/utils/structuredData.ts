@@ -188,7 +188,7 @@ export function generatePersonSchemaWithExperience(): StructuredData {
     ],
     sameAs: [
       "https://github.com/RaquelSousa",
-      "https://www.linkedin.com/in/raquel-sousa-frontend-developer/",
+      "https://www.linkedin.com/in/raquel-sousa-software-engineer/",
     ],
   };
 }

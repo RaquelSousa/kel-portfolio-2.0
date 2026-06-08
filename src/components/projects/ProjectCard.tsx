@@ -16,7 +16,6 @@ import {
   cardHover,
   staggerContainer,
   staggerItem,
-  scaleIn,
   buttonPress,
 } from "@/lib/animations";
 

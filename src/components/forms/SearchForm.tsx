@@ -10,7 +10,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { Search, X } from "lucide-react";
+import { Search } from "lucide-react";
 
 interface SearchFormProps {
   onSearch: (query: string) => void;

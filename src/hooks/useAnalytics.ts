@@ -126,13 +126,14 @@ export function useComponentTracking(componentName: string) {
   const mountTime = useRef<number>(Date.now());
 
   useEffect(() => {
+    const mountedAt = mountTime.current;
     trackEvent("component_mounted", {
       component: componentName,
       timestamp: Date.now(),
     });
 
     return () => {
-      const timeAlive = Date.now() - mountTime.current;
+      const timeAlive = Date.now() - mountedAt;
       trackEvent("component_unmounted", {
         component: componentName,
         timeAlive,

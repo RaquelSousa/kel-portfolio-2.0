@@ -11,7 +11,6 @@ import {
   staggerContainer,
   staggerItem,
   slideInFromBottom,
-  scaleIn,
   cardHover,
 } from "@/lib/animations";
 
@@ -81,7 +80,7 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7, duration: 0.4 }}
               >
-                Other Web Development Projects
+                Other Projects & Research
               </motion.h3>
               <motion.p
                 className="text-sm text-muted-foreground max-w-2xl mx-auto"
@@ -89,8 +88,8 @@ export function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8, duration: 0.4 }}
               >
-                A collection of additional websites and experiments showcasing
-                various web development skills and creative solutions.
+                A collection of additional projects, websites, and research experiments showcasing
+                various engineering skills and creative solutions.
               </motion.p>
             </div>
 

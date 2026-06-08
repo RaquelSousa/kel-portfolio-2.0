@@ -1,4 +1,4 @@
-import { Variants, Transition, MotionProps } from "framer-motion";
+import { Variants, Transition } from "framer-motion";
 
 export const pageVariants: Variants = {
   hidden: {

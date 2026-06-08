@@ -28,3 +28,6 @@ dist-ssr
 
 #testing screenshots
 cypress/screenshots
+
+#audit reports
+lighthouse-report.*
